@@ -78,6 +78,9 @@ body {
   font-size: 26px;
   line-height: 1.2;
   text-decoration: none;
+
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
 }
 
 .logo-web {
@@ -431,14 +434,17 @@ a.current::after {
   width: 106px;
   height: 60px;
   fill: var(--icon-color);
+  transform: rotate(0);
 
-  transition: fill var(--transition-functions);
+  transition: fill var(--transition-functions),
+    transform var(--transition-functions);
 }
 
 .clients-decorations:hover .clients-icon,
 .clients-decorations:focus .clients-icon {
   fill: var(--accent-color);
   outline: none;
+  transform: rotate(360deg);
 }
 /*=============F O O T E R=================*/
 .footer {
@@ -691,6 +697,7 @@ a.current::after {
 
   transition: opacity var(--transition-functions),
     visibility var(--transition-functions);
+  /* animation: changeScale 2500ms linear; */
   z-index: 100;
 }
 
@@ -724,3 +731,12 @@ a.current::after {
 
   cursor: pointer;
 }
+
+/* @keyframes changeScale {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+} */
